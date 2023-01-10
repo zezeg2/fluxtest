@@ -6,10 +6,10 @@ import org.reactivestreams.Subscription;
 import java.util.Iterator;
 
 public class MySubscription implements Subscription {
-    private Subscriber<? super Integer> subscriber;
+    private Subscriber subscriber;
     private Iterator<Integer> iterator;
 
-    public MySubscription(Subscriber<? super Integer> subscriber, Iterable<Integer> iterator) {
+    public MySubscription(Subscriber subscriber, Iterable iterator) {
         this.subscriber = subscriber;
         this.iterator = iterator.iterator();
         System.out.println("Subscription Created");

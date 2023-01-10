@@ -3,7 +3,7 @@ package org.example;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
-public class MySubscriber implements Subscriber<Integer> {
+public class MySubscriber<T> implements Subscriber<T> {
 
     private final int backPressure;
     private int bufferSize;
@@ -24,8 +24,8 @@ public class MySubscriber implements Subscriber<Integer> {
     }
 
     @Override
-    public void onNext(Integer integer) {
-        System.out.println("onNext() : " + integer);
+    public void onNext(T data) {
+        System.out.println("onNext() : " + data);
         bufferSize--;
         if (bufferSize == 0) {
             System.out.println("Buffer Cleared\n");

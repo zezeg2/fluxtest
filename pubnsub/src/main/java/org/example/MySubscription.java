@@ -6,8 +6,8 @@ import org.reactivestreams.Subscription;
 import java.util.Iterator;
 
 public class MySubscription implements Subscription {
-    private Subscriber subscriber;
-    private Iterator<Integer> iterator;
+    private final Subscriber subscriber;
+    private final Iterator<Integer> iterator;
 
     public MySubscription(Subscriber subscriber, Iterable iterator) {
         this.subscriber = subscriber;

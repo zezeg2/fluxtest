@@ -3,8 +3,6 @@ package org.example;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 
-import java.util.List;
-
 public class MyPublisher <T> implements Publisher<T> {
 
     Iterable<T> iterable;
